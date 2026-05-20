@@ -42,4 +42,4 @@ async def handler(event):
 
 client.start()
 print("🤖 Samandar Userbot ishga tushdi!")
-client.run_until_disconnected()
+client.run_until_disconnected() 
