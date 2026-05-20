@@ -1,20 +1,21 @@
 from telethon import TelegramClient, events
+from telethon.sessions import StringSession
 import time
 import os
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import threading
 
 api_id = 21083126
-api_hash = '2354685507583d97b1e3583cc8ff747d'
+api_hash = 'sizning_hash'
+session_string = os.environ.get('2354685507583d97b1e3583cc8ff747d')
 
-client = TelegramClient('samandar_userbot', api_id, api_hash)
+client = TelegramClient(StringSession(session_string), api_id, api_hash)
 
 auto_replies = {}
 DEFAULT = "Xabaringizni oldim! Hozir band edim, tez orada javob beraman 😊"
 last_active = 0
 TIMEOUT = 300
 
-# Render uchun oddiy server
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
